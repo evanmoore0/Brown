@@ -1,0 +1,34 @@
+Cartoon README
+
+Handin: This is my final handin.
+
+Overview:
+I have five classes total: Cartoon- contains the timelines, eventhandlers, and label; CartoonHandler- creates the
+composite shape, and methods that add functionality to the composite shape; PaneOrganizer- creates the borderpane and
+the panes that will go onto the borderPane; Constants- contains all of my constant variables; App- creates the scene
+and runs the app. The cartoon class accepts two variables, rocketPane and label, and creates an instance of
+CartoonHandler. It also calls the timelines in order which animates the app. The PaneOrganizer class creates an instance
+of the cartoon class and adds the panes to the top and middle of the borderpane.
+
+Design Choices:
+I decided to keep all of my shapes in the same class because it allowed me to easily position and create methods for the
+cartoon as a whole. All of my EventHandlers/Timelines are connected. When you first run the program the StartLaunch
+EventHandler waits until the user presses the space bar, then calls the setupLabelTimeline() which begins the countdown.
+Once the countdown has reached zero the two remaining timelines are called, one moves the rocket, and the other updates
+the label. I also added a secret message that appears after the spacecraft has traveled more than 100 miles, and
+disappears after the spacecraft has traveled more than 120 miles. I put the button and button event handler in the
+CartoonHandler class because I wanted it to appear on the bottom right corner of the screen. Originally the user could
+press space bar as many times as they want causing the countDown to go into the negatives and the spacecraft to move
+very quickly, but I added some logic in the StartLaunch() event handler to prevent this from happening.
+
+Known Bugs:
+If I let the cartoon run for a long time it begins to get very laggy and ends up crashing.
+
+Why?:
+I chose to make this space themed cartoon because space is my greatest interest. Ever since I was a little kid the vast
+pit of absolutely incredible phenomena has peaked my curiosity. My single goal before I die is to go into space, and the
+mere thought of entering space and seeing Earth below me makes me excited. Hopefully space travel will be commercialised
+in the near future and it will be possible to make this ongoing dream of mine become reality. I have also already began
+looking into the space force.
+
+Hours: This project took me about 16 hours

@@ -1,0 +1,26 @@
+Doodlejump README
+
+Handin: This is my final handin.
+
+Overview:
+    My doodlejump has five classes total. The App class contains an instance of the PaneOrganizer class which contains
+    an instance of my Handler class. My Handler class contains an instance of both my Doodle and Platform class. My
+    Handle class contains all of the logic and functionality for doodlejump, while my Doodle and Platform classes setup
+    the doodle and platforms for the game.
+
+Design Choices:
+    One design choice I decided to make was to create an interects() method that checks to see if each platform in the
+    my array list of platform intersects with doodle. I decided to make it like this because it seemed like the more
+    efficient option to me. Another design choice I made was to factor out all of the code I had in my handle method in
+    the GravityHandler class into methods. This made it very easy for me problem solve bugs, and it looks much nicer. I
+    also used for loops instead of foreach loops because it helped me visualize what would occur when the code runs.
+
+Known Bugs:
+    An error I ran into a couple times occurred when I would try to add the same item to a pane multiple times. This made
+     it tricky to update the labels how I wanted to.
+
+Hours: This project took me approximately 14 hours to complete.
+
+Extra Credit:
+    I implemented a score counter that gives the user points based on how many platforms they jump on. I decided to
+    implement this because the game didn't feel right without a scoreboard.

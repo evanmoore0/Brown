@@ -1,0 +1,9 @@
+README andybot
+
+HANDIN:
+
+DESIGN CHOICES: Nesting is when you call a function and pass it another function's return as a parameter. In andybot the solveRoadBlock() method needed getHint() in order to solve the road block. To do this I passed getHint() as a parameter to solveRoadBlock. I then passed this parameter into the enterPassword() method. Nesting allowed me to directly send getHint()'s return into solveRoadBlock().
+
+KNOWN BUGS:
+
+Amount of Hours- 1

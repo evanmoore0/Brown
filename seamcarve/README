@@ -1,0 +1,19 @@
+Handin: Final Handin
+
+Design Choices:
+Within findLowestCostSeam I call my argMin method and my importance method which calls my getPixelValue and edgeCase
+methods. I decided to create a separate method to get the red green and blue values for each pixel and add them up to be
+stored in a 2-D array to factor code out of my importance method. I decided to make this array an instance variable so I
+could access it when in my edgeCase method. When I first wrote my program I had a bunch of if statements for the edge
+cases, but I finally came up with the solution of using a method that returns zero if the current pixel is an edge case,
+and the pixel value otherwise. I then call this method on the four surrounding pixels to the current pixel we're getting
+the importance value of. I also considered factoring out the edge cases for the costs and directions arrays into a
+method, but this would force me to make their array's instance variables which would ruin the program.
+
+Known Bugs:
+I originally passed the current value of the pixel to the edge case method and I would subtract the current value from
+the surrounding pixels value, but this was giving me very odd seams. So instead, if the surrounding cell is an edge case
+I add the current pixel value instead of adding nothing. This ended up giving far better results.
+
+Explanation of Test Cases:
+I tested my seam carve algorithm on every available image that was given to us.

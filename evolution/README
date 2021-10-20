@@ -1,0 +1,41 @@
+Evolution README
+
+Handin: This is my final handin.
+
+Overview:
+    My Evolution has seven classes in total. The App class creates an instance of PaneOrganizer which creates an
+    instance of the game class and passes it a boolean based on which game mode the user chose. The game class then
+    creates an instance of the Bird class if they chose manuel flappy, or an instance of the SmartBird class if they
+    chose smart flappy, and an instance of my Pipe class. It also calls methods from the Bird/SmartBird class based on
+    what game the user is playing, sets the scoreboard/updates the scoreboard, and contains two key handlers that listen
+    for user input. My Pipe class creates two rectangles with a constant gap between them, and moves them. The SmartBird
+    class contains an array list of fifty birds and the neural network that makes the birds learn. My Bird class creates
+    a composite shape, adds it to the pane, and sets the velocity of the composite shape.
+
+Design Choices:
+    One design choice I decided to make was to use instances of the bird class as my population of smart birds. This
+    saved me multiple lines of code, and made changing the birds eye location very easy. I also decided to keep my
+    neural network in my SmartBird class because it allowed me to access the neural network from the SmartBird class
+    without having to navigate classes. Another design choice I made was to store the weight of each bird at the same
+    index the bird is in. This allowed me to easily remove the weights of the birds that intersect with the pipe or
+    ground. This also assisted with passing weights onto the next generation. Instead of creating a method that keeps
+    track of the birds fitness I remove the bird and its weights when it intersects with a pipe/ the ground. Then, when
+    there are only two birds left in the ArrayList I store their values and pass them onto the next generation of birds.
+    I also call my forward propagation method in the for loop of my getInputs method which allows me to call forward
+    propagate on the desired bird, and pass it the index of the desired bird. For my inputs I decided to use the top and
+    bottom pipes height, their x location, and the birds y location. I chose these values because they are all the bird
+    needs to learn how to play the game. I decided to mutate the passed on weights of my best two birds by a random
+    number between -1 and 1. This mutates the birds so they are not too closely related, but still learn. Another design
+    choice I made was to create one dot product method that handles multiplying the inputs by the weights, and the
+    hidden layer by the second set of weights to get the product. This is far more efficient then creating a dot product
+    method that handles multiplying the inputs by the first set of weights, and a separate method that handles
+    multiplying the hidden layer by the second set of weights.
+
+Known Bugs:
+
+
+Hours: This project took me approximately 35 hours to complete.
+
+Extra Credit:
+    I added extra speed up buttons, a kill switch, and I made the bird's eye tilt up when it is going up, and tilt down
+    when it is dropping.
