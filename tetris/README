@@ -1,0 +1,35 @@
+Tetris README
+
+Handin: This is my final handin.
+
+Overview:
+    My tetris has six classes total. The App class contains an instance of the PaneOrganizer class which contains
+    an instance of my TetrisHandler class. My Handler class contains an instance of both my Board and Piece class. My
+    TetrisHandle class calls all of the methods in my piece and board class which provide the game with functionality.
+    My piece class creates a randomly generated array of rectangles, moves the piece left and right, rotates the piece,
+    and shift the piece down. My board class creates a 2-D array of rectangles (the boarder), and makes the center of
+    the board null. It also checks to see if the piece intersects with the board on the x and y axis, adds the piece to
+    the board, clears the line when its full, shifts the pieces down, and drops the piece when the user presses space bar.
+    when its full
+
+Design Choices:
+    One design choice I decided to make was to create two different methods for checking to see if the piece intersects
+     on the x and y axis. I decided to do this because it allowed me to call the check intersectX method when the user
+     presses the right and left arrow key, and call the check intersect method every keyframe. Another design choice I
+     made was to store the row that should be cleared in an arraylist. This allowed me to add multiple rows to the
+     array list that get deleted which allowed me to delete multiple rows at the same time. I also used for loops instead
+     of foreach loops because it helped me visualize where I am in the background/piece. I also used a switch statement
+     that sets the 2-D array of x and y coords of the piece and returns the color of the piece. I then call this method
+     when generating a piece. This saved me multiple lines of code and is much more efficient. Another design choice I
+     made was to check to see if the piece can be rotated before rotating the piece. This allowed me to prevent a piece
+     from rotating when it should not be rotated efficiently. I also added an if statement in my key event handler to
+     check if the game is paused before checking the key the user pressed. This let me toggle between the game being
+     paused and not paused very easily. I decided to not use a rectangle class to represent each rectangle in the
+     piece array because it would require more method calls for example _Piece[i].getRectangle().getX(), and because I
+     liked how I randomly generated pieces. Another design choice I made was to add the piece to the same pane as the
+     board. I did this because when I was trying to clear lines it didn't allow me to graphically remove the line.
+
+Known Bugs:
+
+
+Hours: This project took me approximately 40 hours to complete.

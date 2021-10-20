@@ -1,0 +1,26 @@
+fruitninja README
+
+Handin: This is my final handin
+
+Overview:
+    I created a game class that extends CS15Game, and is instantiated in the App.java class. When the frame for the game
+    is created I create a new instance of the game class, and call add game on the frame and pass it the instance of the
+    game class. The game class creates instances of the fruits, blade, and bomb classes. Then with these instances I use
+    the onBladeContact() and launchItem() methods to incorporate the game functionality. All of the choppable items
+    implement the Choppable interface which contains the chop() method. The chop() method is implemented differently in
+    each of the fruit classes because they each have to return different point values, and the bomb class calls the
+    explode method when the chop() method is called.
+
+Design Choices:
+    Some notable design choices I made was the choppable interface, class for each fruit, and using a switch statement
+    in launchItem(). I decided to make an interface for all of the items that can be chopped by the fruit to easily
+    allow me to call the chop() method on an instance of the interface. This cleaned up my code very nicely. I also
+    decided to create a class for each fruit because they all needed to return a different string path in the getImage()
+    method. Finally, in order to throw up a random item I used a switch statement and compared the cases in my switch
+    statement to a random integer I create.
+
+Known Bugs:
+    At first I tried using if statements in the onBladeContact() method which worked at first, but after cutting a
+    couple of the fruit it would only allow me to cut certain fruit.
+
+Hours: This took me about 5 hours
